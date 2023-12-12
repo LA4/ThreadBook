@@ -12,9 +12,45 @@ export function LoginForm() {
       <h4>Connection</h4>
       <form style={styleLoginForm} action="">
         <label htmlFor="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Votre email" />
+        <input
+          style={{
+            fontSize: ".8rem",
+            padding: ".5rem",
+            borderRadius: ".5rem",
+            border: "transparent",
+          }}
+          type="email"
+          name="email"
+          id="email"
+          placeholder="- exmple@email.com - "
+        />
         <label htmlFor="password">Mot de passe</label>
-        <input type="password" name="password" id="password" />
+        <input
+          style={{
+            fontSize: ".8rem",
+            padding: ".5rem",
+            borderRadius: ".5rem",
+            border: "transparent",
+          }}
+          type="password"
+          minLength={"4"}
+          name="password"
+          id="password"
+          placeholder="- votre mot de passe -"
+        />
+        <button
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "30px",
+            border: "1px solid white",
+            margin: ".5rem",
+            color: "white",
+          }}
+          type="submit">
+          se connecter
+        </button>
       </form>
     </>
   );

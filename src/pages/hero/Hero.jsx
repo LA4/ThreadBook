@@ -60,7 +60,7 @@ export function Hero() {
               color: "rgba(0,0,0,.8)",
             }}>
             <span style={{ display: "flex", padding: ".5rem" }}>
-              Vous avez lu :{totalPages} pages !
+              Vous avez lu : {totalPages} pages {totalPages ? "!" : ""}
             </span>
             {books
               .map((b) => (
