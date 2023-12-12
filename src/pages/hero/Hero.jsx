@@ -1,11 +1,10 @@
 import bg from "./../../../public/images/ayman-yusuf-Librairie.jpg";
 import { BookForm } from "../../component/bookform/BookForm";
 import { ListOfBooks } from "../../component/listOfBooks/ListOfBooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function Hero() {
   const [books, setBooks] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
   const heroStyle = {
     display: "flex",
     justifyContent: "center",
@@ -27,12 +26,6 @@ export function Hero() {
     });
     setBooks(newBooks);
   };
-  const pages = () => {
-    for (let book of books) {
-      return parseInt(book.title);
-    }
-  };
-  console.log(pages);
   return (
     <>
       <div style={heroStyle}>
@@ -64,7 +57,7 @@ export function Hero() {
               color: "rgba(0,0,0,.8)",
             }}>
             <span style={{ display: "flex", padding: ".5rem" }}>
-              Vous avez lu : {totalPages} pages !
+              Vous avez lu : pages !
             </span>
             {books
               .map((b) => (
