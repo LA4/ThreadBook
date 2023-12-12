@@ -5,7 +5,7 @@ export function ListOfBooks({ title, pages, resume, deleteBook, category }) {
   const [visibleResume, setvisibleResume] = useState(false);
   const handleDelete = (e) => {
     e.preventDefault();
-    deleteBook(title);
+    deleteBook(title, pages);
   };
   return (
     <>

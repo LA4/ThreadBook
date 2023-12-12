@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export function Hero() {
   const [books, setBooks] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
   const heroStyle = {
     display: "flex",
     justifyContent: "center",
@@ -18,13 +19,15 @@ export function Hero() {
   };
   const dataBooks = (e) => {
     setBooks([...books, e]);
+    setTotalPages((totalPages) => (totalPages += parseInt(e.pages)));
   };
 
-  const deleteBook = (book) => {
+  const deleteBook = (book, pages) => {
     const newBooks = books.filter((actualBook) => {
       return actualBook.title !== book;
     });
     setBooks(newBooks);
+    setTotalPages((totalPages) => (totalPages -= pages));
   };
   return (
     <>
@@ -57,7 +60,7 @@ export function Hero() {
               color: "rgba(0,0,0,.8)",
             }}>
             <span style={{ display: "flex", padding: ".5rem" }}>
-              Vous avez lu : pages !
+              Vous avez lu :{totalPages} pages !
             </span>
             {books
               .map((b) => (
